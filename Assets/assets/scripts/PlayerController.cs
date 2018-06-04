@@ -19,4 +19,9 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+	void OnTriggerEnter(Collider collision){
+		if (collision.gameObject.tag == "cancer") {
+			Destroy (this.gameObject);
+		}
+	}
 }
