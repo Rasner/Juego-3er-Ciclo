@@ -32,7 +32,6 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             float y = (BT.rectTransform.pivot.y == 1) ? pos.y * 2 + 1 : pos.y * 2 - 1;
 
             InputDirection = new Vector3(x, 0, y);
-            Debug.Log(InputDirection);
             InputDirection = (InputDirection.magnitude > 1) ? InputDirection.normalized : InputDirection;
             JS.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (BT.rectTransform.sizeDelta.x / 5)
                 , InputDirection.z * (BT.rectTransform.sizeDelta.y / 5));

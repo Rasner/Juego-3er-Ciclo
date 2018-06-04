@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
     public bool zona;
+    public Transform player;
     // Use this for initialization
     void Start()
     {
@@ -19,9 +20,5 @@ public class PlayerController : MonoBehaviour
     {
 
     }
-	void OnTriggerEnter(Collider collision){
-		if (collision.gameObject.tag == "cancer") {
-			Destroy (this.gameObject);
-		}
-	}
+
 }

@@ -17,6 +17,28 @@ public class playermov : MonoBehaviour
         transform.Translate(speed * joystick.InputDirection * Time.deltaTime);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "cancer")
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (other.gameObject.tag == "CTrigger")
+        {
+            PlayerController.instance.zona = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "CTrigger")
+        {
+            PlayerController.instance.zona = false;
+        }
+    }
+
+
     /*public void SButton (bool salto)
     {
         if (salto)
@@ -25,4 +47,5 @@ public class playermov : MonoBehaviour
         }
     }
     */
+
 }

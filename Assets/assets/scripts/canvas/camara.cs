@@ -37,13 +37,6 @@ public class camara : MonoBehaviour
 
         if (PlayerController.instance.zona == true)
         {
-            //transform.position = new Vector3(rotar.position.x, rotar.position.y, rotar.position.z);
-            /*
-            if (transform.position.y < 90)
-            {
-                transform.Translate(rotar.transform.position * Time.deltaTime);
-            }*/
-            //transform.position = rotar.position;
             transform.position = Vector3.Lerp(transform.position, tpdwn.position, Time.deltaTime * speed);
 
             Vector3 currentAngle = new Vector3(
